@@ -32,7 +32,7 @@ export default function AppleIcon() {
               width: d,
               height: d,
               borderRadius: 9999,
-              border: `${w}px solid rgba(95,195,161,${o})`,
+              border: `${w}px solid rgba(127,224,192,${o})`,
               display: "flex",
             }}
           />
@@ -45,7 +45,7 @@ export default function AppleIcon() {
             width: 40,
             height: 40,
             borderRadius: 9999,
-            backgroundColor: "#5fc3a1",
+            backgroundColor: "#7fe0c0",
             display: "flex",
           }}
         />
