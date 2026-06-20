@@ -20,10 +20,10 @@
   --color-faint: #767d78;
 
   /* Brand — green system */
-  --color-brand: #4fbf97;
-  --color-brand-deep: #1d5746;
-  --color-brand-bright: #7fe0c0;
-  --color-brand-dim: #35846d;
+  --color-brand: #3a8e76;
+  --color-brand-deep: #1a4d3e;
+  --color-brand-bright: #5fc3a1;
+  --color-brand-dim: #2a6655;
 
   /* Type */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
@@ -184,8 +184,8 @@
 
   .glow-ring {
     box-shadow:
-      0 0 0 1px rgba(127, 224, 192, 0.16),
-      0 18px 60px -22px rgba(79, 191, 151, 0.5);
+      0 0 0 1px rgba(95, 195, 161, 0.16),
+      0 18px 60px -22px rgba(58, 142, 118, 0.5);
   }
 }
 

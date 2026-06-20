@@ -9,7 +9,7 @@ export default function NotFound() {
         className="pointer-events-none absolute left-1/2 top-1/2 size-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(79,191,151,0.12), transparent 65%)",
+            "radial-gradient(circle, rgba(58,142,118,0.12), transparent 65%)",
         }}
       />
       <Container className="relative text-center">

@@ -36,7 +36,7 @@ export function CTA({
             className="pointer-events-none absolute -left-32 bottom-[-45%] size-[420px] rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgba(79,191,151,0.18), transparent 70%)",
+                "radial-gradient(circle, rgba(58,142,118,0.18), transparent 70%)",
             }}
           />
           <div className="relative max-w-xl">

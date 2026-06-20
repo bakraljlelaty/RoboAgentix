@@ -19,7 +19,7 @@ export function PageHero({
         className="pointer-events-none absolute -top-40 left-1/2 size-[640px] -translate-x-1/2 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(79,191,151,0.12), transparent 65%)",
+            "radial-gradient(circle, rgba(58,142,118,0.12), transparent 65%)",
         }}
       />
       <Container>

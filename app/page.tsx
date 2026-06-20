@@ -32,7 +32,7 @@ export default function HomePage() {
             className="aura size-full rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgba(79,191,151,0.16), transparent 60%)",
+                "radial-gradient(circle, rgba(58,142,118,0.16), transparent 60%)",
             }}
           />
         </div>
@@ -255,7 +255,7 @@ export default function HomePage() {
               className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(79,191,151,0.16), transparent 70%)",
+                  "radial-gradient(circle, rgba(58,142,118,0.16), transparent 70%)",
               }}
             />
             <blockquote className="relative max-w-3xl text-xl font-medium leading-relaxed sm:text-2xl">

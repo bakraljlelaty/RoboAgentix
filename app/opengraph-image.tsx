@@ -18,8 +18,8 @@ const geistRegular = readFileSync(join(fontDir, "Geist-Regular.ttf"));
 const geistSemiBold = readFileSync(join(fontDir, "Geist-SemiBold.ttf"));
 const geistMono = readFileSync(join(fontDir, "GeistMono-Medium.ttf"));
 
-const BRAND = "#7fe0c0";
-const BRAND_DIM = "#4fbf97";
+const BRAND = "#5fc3a1";
+const BRAND_DIM = "#3a8e76";
 const BG = "#0b0b0d";
 
 export default async function Image() {
@@ -50,7 +50,7 @@ export default async function Image() {
             borderRadius: 9999,
             display: "flex",
             background:
-              "radial-gradient(closest-side, rgba(127,224,192,0.30), rgba(127,224,192,0.06) 58%, rgba(127,224,192,0) 74%)",
+              "radial-gradient(closest-side, rgba(95,195,161,0.30), rgba(95,195,161,0.06) 58%, rgba(95,195,161,0) 74%)",
           }}
         />
 
@@ -77,7 +77,7 @@ export default async function Image() {
                 width: d,
                 height: d,
                 borderRadius: 9999,
-                border: `1px solid rgba(127,224,192,${0.16 + i * 0.13})`,
+                border: `1px solid rgba(95,195,161,${0.16 + i * 0.13})`,
                 display: "flex",
               }}
             />
