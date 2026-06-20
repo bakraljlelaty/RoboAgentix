@@ -13,7 +13,7 @@ export function CTA({
   title = "Build systems your organization can trust.",
   intro = "Tell us where you want to go. We'll show you the fastest credible path to get there — with security, scale, and accountability built in.",
   primary = { href: "/contact", label: "Start a conversation" },
-  secondary = { href: "/work", label: "See our work" },
+  secondary = { href: "/about", label: "About us" },
 }: {
   eyebrow?: string;
   title?: string;

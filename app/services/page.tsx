@@ -93,7 +93,6 @@ export default function ServicesPage() {
         title="Not sure where to start?"
         intro="Most engagements begin with a focused discovery sprint — a few weeks to map the opportunity, de-risk the approach, and return a costed plan."
         primary={{ href: "/contact", label: "Book a discovery sprint" }}
-        secondary={{ href: "/work", label: "See the outcomes" }}
       />
     </>
   );

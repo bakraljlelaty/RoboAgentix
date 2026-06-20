@@ -7,12 +7,10 @@ import { Reveal } from "@/components/reveal";
 import { Counter } from "@/components/counter";
 import { Marquee } from "@/components/marquee";
 import { Pipeline } from "@/components/pipeline";
-import { CaseCard } from "@/components/case-card";
 import { CTA } from "@/components/cta";
 import { ArrowRight, ServiceIcon } from "@/components/icons";
 import {
   agentCoreCapabilities,
-  caseStudies,
   certifications,
   industries,
   metrics,
@@ -242,33 +240,6 @@ export default function HomePage() {
                     {p.desc}
                   </p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* ------------------------ Selected work ------------------------- */}
-      <Section>
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading
-              eyebrow="Selected work"
-              title="Outcomes in high-stakes environments."
-            />
-            <Button
-              href="/work"
-              variant="secondary"
-              icon={false}
-              className="hidden shrink-0 sm:inline-flex"
-            >
-              All case studies
-            </Button>
-          </div>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {caseStudies.map((cs, i) => (
-              <Reveal key={cs.slug} delay={i * 70}>
-                <CaseCard cs={cs} />
               </Reveal>
             ))}
           </div>
