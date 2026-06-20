@@ -1,0 +1,379 @@
+@import "tailwindcss";
+
+/* ============================================================
+   RoboAgentix — Design System
+   Identity: enterprise AI & software engineering.
+   Dark canvas, deep green + emerald, "Agent Core" motion language.
+   ============================================================ */
+
+@theme {
+  /* Surfaces */
+  --color-bg: #0e0e10;
+  --color-bg-2: #0a0a0c;
+  --color-surface: #141517;
+  --color-surface-2: #191b1d;
+  --color-line: #24282a;
+
+  /* Text */
+  --color-ink: #eef1ee;
+  --color-muted: #a4aba6;
+  --color-faint: #767d78;
+
+  /* Brand — green system */
+  --color-brand: #3a8e76;
+  --color-brand-deep: #1a4d3e;
+  --color-brand-bright: #5fc3a1;
+  --color-brand-dim: #2a6655;
+
+  /* Type */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Fluid display scale */
+  --text-display: clamp(2.6rem, 6.5vw, 5.25rem);
+  --text-h1: clamp(2.1rem, 4.6vw, 3.6rem);
+  --text-h2: clamp(1.7rem, 3.2vw, 2.6rem);
+
+  /* Easing */
+  --ease-out-soft: cubic-bezier(0.22, 0.7, 0.22, 1);
+}
+
+/* ---------------------------------- Base ---------------------------------- */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-brand-bright) 32%, transparent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-bright);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Thin, on-brand scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2e30;
+    border-radius: 999px;
+    border: 3px solid var(--color-bg-2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-dim);
+  }
+}
+
+/* ------------------------------- Utilities -------------------------------- */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(
+      104deg,
+      var(--color-ink) 0%,
+      var(--color-ink) 42%,
+      var(--color-brand-bright) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Eyebrow / mono label */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-brand-bright);
+  }
+
+  /* Hairline grid background with radial fade */
+  .grid-bg {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.028) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 58px 58px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      #000 30%,
+      transparent 78%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      #000 30%,
+      transparent 78%
+    );
+  }
+
+  /* Film grain for premium depth */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .card {
+    background: linear-gradient(
+      180deg,
+      var(--color-surface) 0%,
+      var(--color-bg) 130%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+  }
+
+  .card-hover {
+    transition:
+      border-color 0.3s var(--ease-out-soft),
+      transform 0.4s var(--ease-out-soft),
+      background 0.4s var(--ease-out-soft);
+  }
+  .card-hover:hover {
+    border-color: color-mix(in oklab, var(--color-brand) 55%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .hairline {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgba(95, 195, 161, 0.16),
+      0 18px 60px -22px rgba(58, 142, 118, 0.5);
+  }
+}
+
+/* ------------------------------- Animations ------------------------------- */
+
+/* Hero entrance (no-JS, staggered via --d) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  opacity: 0;
+  animation: rise 0.9s var(--ease-out-soft) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+/* Scroll reveal (IntersectionObserver toggles .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
+  transition-delay: var(--rd, 0s);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Agent Core */
+@keyframes ac-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ac-spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes ac-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.95;
+  }
+}
+@keyframes ac-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+@keyframes ac-travel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+@keyframes ac-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.ac-orbit {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ac-spin var(--dur, 60s) linear infinite;
+}
+.ac-orbit.rev {
+  animation-name: ac-spin-rev;
+}
+.ac-core-glow {
+  animation: ac-glow 6s ease-in-out infinite;
+}
+.ac-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ac-pulse 5.5s ease-in-out infinite;
+}
+.ac-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ac-bob var(--dur, 5s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.ac-dot {
+  offset-path: var(--path);
+  offset-rotate: 0deg;
+  animation: ac-travel var(--dur, 4.5s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Data-flow line (services / pipeline) */
+@keyframes flow-move {
+  to {
+    background-position: 200% 0;
+  }
+}
+.flow-line {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-bright) 50%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: flow-move 3.4s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Marquee */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--dur, 42s) linear infinite;
+}
+
+/* Slow conic shimmer for the hero aura */
+@keyframes aura {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.aura {
+  animation: aura 28s linear infinite;
+}
+
+/* --------------------------- Reduced motion ------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .rise {
+    opacity: 1 !important;
+  }
+  .ac-dot {
+    opacity: 0 !important;
+  }
+}
