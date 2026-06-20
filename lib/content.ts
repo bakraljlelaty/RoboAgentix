@@ -3,6 +3,11 @@
  * All marketing copy lives here so pages stay structural.
  */
 
+// Canonical site origin. Defined in its own module (./site) because this file
+// declares `const process` (the delivery steps) below, which would shadow the
+// Node global.
+export { siteUrl } from "./site";
+
 export const site = {
   name: "RoboAgentix",
   domain: "roboagentix.ai",

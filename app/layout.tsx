@@ -4,15 +4,18 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { site } from "@/lib/content";
+import { site, siteUrl } from "@/lib/content";
+
+const title = "RoboAgentix — Enterprise AI & Software Engineering";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roboagentix.ai"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "RoboAgentix — Enterprise AI & Software Engineering",
+    default: title,
     template: "%s — RoboAgentix",
   },
   description: site.description,
+  applicationName: site.name,
   keywords: [
     "enterprise software",
     "agentic automation",
@@ -22,17 +25,33 @@ export const metadata: Metadata = {
     "web and mobile development",
   ],
   authors: [{ name: "RoboAgentix" }],
+  creator: "RoboAgentix",
+  publisher: "RoboAgentix",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "RoboAgentix — Enterprise AI & Software Engineering",
+    title,
     description: site.description,
-    url: "https://roboagentix.ai",
+    url: siteUrl,
     siteName: "RoboAgentix",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RoboAgentix — Enterprise AI & Software Engineering",
+    title,
     description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
