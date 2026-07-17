@@ -9,7 +9,7 @@ import { services } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Enterprise software, web & mobile applications, AI-powered solutions, agentic automation, intelligent process automation, and digital transformation.",
+    "Custom software development, AI agents, intelligent automation & RPA, mobile and web applications, AI/ML solutions, system integrations, and cloud solutions.",
 };
 
 export default function ServicesPage() {
@@ -23,7 +23,7 @@ export default function ServicesPage() {
             <span className="text-gradient">autonomous operations</span>.
           </>
         }
-        intro="Six capabilities, one accountable partner. We architect, build, and operate the systems your organization depends on — with security and auditability engineered in from the start."
+        intro="One accountable partner, from custom software to autonomous agents. We architect, build, and support the systems your organization depends on — with security and auditability engineered in from the start."
       >
         <div className="flex flex-wrap gap-2">
           {services.map((s) => (
@@ -92,7 +92,8 @@ export default function ServicesPage() {
         eyebrow="Engagements"
         title="Not sure where to start?"
         intro="Most engagements begin with a focused discovery sprint — a few weeks to map the opportunity, de-risk the approach, and return a costed plan."
-        primary={{ href: "/contact", label: "Book a discovery sprint" }}
+        primary={{ href: "/contact", label: "Discuss Your Project" }}
+        secondary={null}
       />
     </>
   );

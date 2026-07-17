@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./logo";
 import { services, site } from "@/lib/content";
-import { Mail, MapPin } from "./icons";
+import { Mail, MapPin, Phone, WhatsApp } from "./icons";
 
 const company = [
   { label: "Services", href: "/services" },
@@ -47,6 +47,20 @@ export function Footer() {
           >
             <Mail className="size-4 text-brand" />
             {site.email}
+          </a>
+          <a
+            href={`tel:${site.phone.replace(/\s/g, "")}`}
+            className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
+          >
+            <Phone className="size-4 text-brand" />
+            {site.phone}
+          </a>
+          <a
+            href={`https://wa.me/${site.whatsapp}`}
+            className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
+          >
+            <WhatsApp className="size-4 text-brand" />
+            WhatsApp
           </a>
         </FooterCol>
       </div>

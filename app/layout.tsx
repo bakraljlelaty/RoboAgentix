@@ -6,7 +6,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { site, siteUrl } from "@/lib/content";
 
-const title = "RoboAgentix — Enterprise AI & Software Engineering";
+const title = "RoboAgentix — AI & Custom Software Development";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -17,12 +17,14 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: [
-    "enterprise software",
-    "agentic automation",
+    "custom software development",
+    "AI agents",
+    "intelligent automation",
+    "RPA",
     "AI solutions",
-    "business process automation",
-    "digital transformation",
     "web and mobile development",
+    "cloud solutions",
+    "Qatar",
   ],
   authors: [{ name: "RoboAgentix" }],
   creator: "RoboAgentix",

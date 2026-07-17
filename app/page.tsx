@@ -12,6 +12,7 @@ import {
   industries,
   process,
   services,
+  technologies,
   valueProps,
 } from "@/lib/content";
 
@@ -43,26 +44,25 @@ export default function HomePage() {
                 className="rise mt-6 text-[length:var(--text-display)] font-semibold leading-[1.02]"
                 style={{ "--d": "0.06s" } as CSSProperties}
               >
-                Autonomous systems for{" "}
-                <span className="text-gradient">mission-critical</span>{" "}
-                enterprises.
+                Building Intelligent Software.{" "}
+                <span className="text-gradient">Powering Autonomous Businesses.</span>
               </h1>
               <p
                 className="rise mt-6 max-w-xl text-lg leading-relaxed text-muted"
                 style={{ "--d": "0.12s" } as CSSProperties}
               >
-                RoboAgentix designs, builds, and operates agentic systems and
-                enterprise software for governments, healthcare, finance, and
-                large organizations — engineered for security, scale, and
-                accountability.
+                RoboAgentix is an AI technology and custom software development
+                company — building AI agents, intelligent automation, and
+                custom software for organizations across Qatar, the GCC, and
+                beyond.
               </p>
               <div
                 className="rise mt-8 flex flex-wrap gap-3"
                 style={{ "--d": "0.18s" } as CSSProperties}
               >
-                <Button href="/contact">Start a project</Button>
+                <Button href="/contact">Discuss Your Project</Button>
                 <Button href="/services" variant="secondary" icon={false}>
-                  Explore services
+                  Explore Solutions
                 </Button>
               </div>
               <div
@@ -87,13 +87,29 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ------------------------- Technologies ------------------------- */}
+      <div className="border-y border-white/8 py-6">
+        <Container>
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+            <span className="shrink-0 font-mono text-xs uppercase tracking-[0.18em] text-faint">
+              Technologies &amp; expertise
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">
+              {technologies.map((t) => (
+                <span key={t}>{t}</span>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </div>
+
       {/* --------------------------- Services --------------------------- */}
       <Section id="services">
         <Container>
           <SectionHeading
             eyebrow="What we do"
-            title="One partner, from architecture to autonomy."
-            intro="Six capabilities that take you from legacy systems to autonomous operations — delivered by senior teams and operated to enterprise SLAs."
+            title="Custom software and AI, built to depend on."
+            intro="From custom software and web & mobile apps to AI agents and intelligent automation — the capabilities that take you from idea to production, and from manual work to autonomous operations."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (

@@ -63,7 +63,7 @@ export function Nav() {
             href="/contact"
             className="group inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-medium text-[#06140f] transition-all duration-300 hover:bg-brand-bright"
           >
-            Start a project
+            Discuss Your Project
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -97,7 +97,7 @@ export function Nav() {
               href="/contact"
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-4 py-3 font-medium text-[#06140f]"
             >
-              Start a project
+              Discuss Your Project
               <ArrowRight className="size-4" />
             </Link>
           </div>

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/primitives";
 import { PageHero } from "@/components/page-hero";
 import { ContactForm } from "@/components/contact-form";
-import { Mail, MapPin, Phone } from "@/components/icons";
+import { Mail, MapPin, Phone, WhatsApp } from "@/components/icons";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with RoboAgentix about enterprise software, AI, and agentic automation. We respond within one business day.",
+    "Get in touch with RoboAgentix about custom software, AI agents, and intelligent automation. We respond within one business day.",
 };
 
 const expectations = [
@@ -58,6 +58,12 @@ export default function ContactPage() {
                 label="Phone"
                 value={site.phone}
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
+              />
+              <ContactDetail
+                icon={<WhatsApp className="size-5 text-brand-bright" />}
+                label="WhatsApp"
+                value={site.phone}
+                href={`https://wa.me/${site.whatsapp}`}
               />
               <ContactDetail
                 icon={<MapPin className="size-5 text-brand-bright" />}

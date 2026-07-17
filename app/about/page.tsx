@@ -106,8 +106,8 @@ export default function AboutPage() {
                 Based in Doha, Qatar.
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Headquartered in {site.hq}, working closely with the
-                organizations we serve.
+                Headquartered in {site.hq}, serving clients across Qatar, the
+                GCC, and internationally.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {site.locations.map((loc) => (
@@ -129,8 +129,8 @@ export default function AboutPage() {
         eyebrow="Partnerships"
         title="Want to build the frontier with us?"
         intro="Whether you're an enterprise with a hard problem or a leader who wants to build dependable AI, we'd like to hear from you."
-        primary={{ href: "/contact", label: "Get in touch" }}
-        secondary={null}
+        primary={{ href: "/contact", label: "Discuss Your Project" }}
+        secondary={{ href: "/services", label: "Explore Solutions" }}
       />
     </>
   );

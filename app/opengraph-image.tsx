@@ -8,7 +8,7 @@ import { join } from "node:path";
  * render a branded image rather than a blank box.
  */
 export const alt =
-  "RoboAgentix — Autonomous systems for mission-critical enterprises";
+  "RoboAgentix — Building Intelligent Software, Powering Autonomous Businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-static";
@@ -165,7 +165,7 @@ export default async function Image() {
             color: BRAND,
           }}
         >
-          Enterprise AI &amp; Software Engineering
+          AI &amp; Custom Software Development
         </div>
 
         {/* headline */}
@@ -173,15 +173,15 @@ export default async function Image() {
           style={{
             display: "flex",
             flexDirection: "column",
-            fontSize: 64,
+            fontSize: 58,
             fontWeight: 600,
-            lineHeight: 1.05,
-            letterSpacing: -2,
+            lineHeight: 1.06,
+            letterSpacing: -1.5,
             marginTop: 20,
           }}
         >
-          <div style={{ display: "flex" }}>Autonomous systems for</div>
-          <div style={{ display: "flex", color: BRAND }}>mission-critical enterprises.</div>
+          <div style={{ display: "flex" }}>Building Intelligent Software.</div>
+          <div style={{ display: "flex", color: BRAND }}>Powering Autonomous Businesses.</div>
         </div>
 
         {/* subhead */}
@@ -195,8 +195,8 @@ export default async function Image() {
             marginTop: 24,
           }}
         >
-          Agentic systems and mission-critical software for governments,
-          healthcare, finance, and large enterprises.
+          AI agents, intelligent automation, and custom software for
+          organizations across Qatar, the GCC, and beyond.
         </div>
 
         {/* footer row */}
@@ -222,7 +222,7 @@ export default async function Image() {
               letterSpacing: 1,
             }}
           >
-            Doha · Riyadh · Dubai · London
+            Doha, Qatar
           </div>
         </div>
       </div>

@@ -186,6 +186,14 @@ export function Phone(p: P) {
     </svg>
   );
 }
+export function WhatsApp(p: P) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M12 21a9 9 0 1 0-8.06-5L3 21l5-1a9 9 0 0 0 4 1Z" />
+      <path d="M9.5 9c0 2.5 2 4.5 4.5 4.5.5 0 .8-.4.8-.9v-.9c0-.4-.3-.7-.7-.6l-1 .2a3 3 0 0 1-1.3-1.3l.2-1c.1-.4-.2-.7-.6-.7h-.9c-.5 0-.9.3-.9.8Z" />
+    </svg>
+  );
+}
 export function MapPin(p: P) {
   return (
     <svg {...base} {...p}>

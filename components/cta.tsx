@@ -9,11 +9,11 @@ interface Link {
 }
 
 export function CTA({
-  eyebrow = "Start a project",
+  eyebrow = "Get started",
   title = "Build systems your organization can trust.",
   intro = "Tell us where you want to go. We'll show you the fastest credible path to get there — with security, scale, and accountability built in.",
-  primary = { href: "/contact", label: "Start a conversation" },
-  secondary = { href: "/about", label: "About us" },
+  primary = { href: "/contact", label: "Discuss Your Project" },
+  secondary = { href: "/services", label: "Explore Solutions" },
 }: {
   eyebrow?: string;
   title?: string;

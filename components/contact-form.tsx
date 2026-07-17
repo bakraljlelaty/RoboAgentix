@@ -1,10 +1,15 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { services } from "@/lib/content";
+import { services, site } from "@/lib/content";
 import { ArrowRight, Check } from "./icons";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
+
+// Web3Forms access key. Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in the environment
+// (see the deploy notes). Submissions are delivered to the address the key was
+// generated for (info@roboagentix.ai).
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-ink placeholder:text-faint outline-none transition-colors focus:border-brand/60 focus:bg-white/[0.05]";
@@ -27,7 +32,7 @@ export function ContactForm() {
     return next;
   }
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -35,13 +40,33 @@ export function ContactForm() {
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
+    // Not wired to a Web3Forms key yet — don't pretend the message sent.
+    if (!WEB3FORMS_KEY) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("submitting");
-    // No backend in this static build — wire to your endpoint (e.g. Formspree,
-    // a serverless function, or your CRM) here.
-    setTimeout(() => {
-      setStatus("success");
-      form.reset();
-    }, 900);
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("subject", "New inquiry from roboagentix.ai");
+    data.append("from_name", "RoboAgentix website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -66,8 +91,43 @@ export function ContactForm() {
     );
   }
 
+  if (status === "error") {
+    return (
+      <div className="card flex flex-col items-start gap-4 p-8">
+        <h3 className="text-xl font-semibold">We couldn&apos;t send your message.</h3>
+        <p className="text-muted">
+          Something went wrong. Please email us directly at{" "}
+          <a
+            href={`mailto:${site.email}`}
+            className="font-medium text-brand-bright hover:underline"
+          >
+            {site.email}
+          </a>{" "}
+          and we&apos;ll get right back to you.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="text-sm font-medium text-brand-bright hover:underline"
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} noValidate className="card flex flex-col gap-5 p-6 sm:p-8">
+      {/* Honeypot for spam bots (kept out of view) */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        aria-hidden="true"
+      />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" id="name" error={errors.name}>
           <input id="name" name="name" className={inputCls} placeholder="Jane Doe" />
