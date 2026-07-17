@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 import {
   Container,
   Eyebrow,
-  Pill,
   Section,
   SectionHeading,
 } from "@/components/primitives";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { AgentCore } from "@/components/agent-core";
-import { Counter } from "@/components/counter";
 import { CTA } from "@/components/cta";
 import { MapPin } from "@/components/icons";
-import { certifications, metrics, site, values } from "@/lib/content";
+import { site, values } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -88,21 +86,6 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="border-y border-white/8 bg-bg-2/40">
-        <Container>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {metrics.map((m, i) => (
-              <Reveal key={m.label} delay={i * 70}>
-                <div className="font-mono text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-                  <Counter value={m.value} prefix={m.prefix} suffix={m.suffix} />
-                </div>
-                <div className="mt-3 text-sm text-muted">{m.label}</div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
@@ -112,24 +95,19 @@ export default function AboutPage() {
                 Security and compliance, by default.
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                We operate to the standards our clients are audited against —
-                with least-privilege access, full audit trails, and data
-                residency you control.
+                We engineer to the standards our clients are audited against —
+                least-privilege access, full audit trails, and data residency
+                you control — so security is built in, not bolted on.
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {certifications.map((c) => (
-                  <Pill key={c}>{c}</Pill>
-                ))}
-              </div>
             </Reveal>
             <Reveal delay={100}>
               <Eyebrow>Where we are</Eyebrow>
               <h2 className="mt-4 text-[length:var(--text-h2)] font-semibold">
-                Global delivery, regional presence.
+                Based in Doha, Qatar.
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Headquartered in {site.hq}, with delivery teams across the region
-                and beyond — close to the organizations we serve.
+                Headquartered in {site.hq}, working closely with the
+                organizations we serve.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {site.locations.map((loc) => (

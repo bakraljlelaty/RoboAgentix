@@ -10,6 +10,7 @@ export { siteUrl } from "./site";
 
 export const site = {
   name: "RoboAgentix",
+  legalName: "RoboAgentix For Software Development",
   domain: "roboagentix.ai",
   tagline: "Enterprise AI & software engineering",
   description:
@@ -17,7 +18,7 @@ export const site = {
   email: "contact@roboagentix.ai",
   phone: "+974 4000 0000",
   hq: "Doha, Qatar",
-  locations: ["Doha", "Riyadh", "Dubai", "London"],
+  locations: ["Doha"],
 };
 
 export const nav = [
@@ -167,42 +168,51 @@ export interface Industry {
 export const industries: Industry[] = [
   {
     name: "Government & Public Sector",
-    blurb: "Citizen services, sovereign cloud, and accountable automation.",
+    blurb: "Citizen services, digital platforms, and accountable automation.",
   },
   {
-    name: "Healthcare & Life Sciences",
-    blurb: "Clinical workflows, claims, and patient-safe AI systems.",
+    name: "Enterprises",
+    blurb: "Shared platforms, integrations, and automation across large organizations.",
+  },
+  {
+    name: "Healthcare",
+    blurb: "Clinical and administrative workflows with patient-safe systems.",
   },
   {
     name: "Financial Services",
     blurb: "Risk, compliance, and intelligent document processing.",
   },
   {
-    name: "Energy & Utilities",
-    blurb: "Predictive operations and asset-intensive platforms.",
+    name: "Construction",
+    blurb: "Project controls, field operations, and back-office automation.",
   },
   {
-    name: "Telecom",
-    blurb: "Network operations, service assurance, and self-service.",
+    name: "Retail",
+    blurb: "Commerce platforms, operations, and customer experience.",
   },
   {
-    name: "Enterprise & Holdings",
-    blurb: "Shared platforms and automation across diversified groups.",
+    name: "Startups",
+    blurb: "From MVP to scale — product engineering and applied AI.",
   },
 ];
 
-export interface Metric {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  label: string;
-}
-
-export const metrics: Metric[] = [
-  { value: 99.99, suffix: "%", label: "Platform uptime SLA" },
-  { value: 40, suffix: "+", label: "Enterprise deployments" },
-  { value: 6, suffix: "M+", label: "Citizens & users served" },
-  { value: 12, prefix: "<", suffix: " wk", label: "Avg. time to value" },
+export const valueProps: { title: string; desc: string }[] = [
+  {
+    title: "Grounded & governed",
+    desc: "AI that's policy-bound, auditable, and explainable by design.",
+  },
+  {
+    title: "Security by default",
+    desc: "Least-privilege access, audit trails, and data residency you control.",
+  },
+  {
+    title: "Senior engineering",
+    desc: "Built by senior engineers and applied-AI specialists, end to end.",
+  },
+  {
+    title: "Built to depend on",
+    desc: "Engineered for regulated and mission-critical environments.",
+  },
 ];
 
 export interface Step {
@@ -256,14 +266,6 @@ export const values: Value[] = [
     title: "Accountable autonomy",
     desc: "Every agent action is logged, replayable, and governed. Automation you can explain to a regulator.",
   },
-];
-
-export const certifications = [
-  "ISO/IEC 27001",
-  "SOC 2 Type II",
-  "GDPR-aligned",
-  "HIPAA-aligned",
-  "Sovereign cloud ready",
 ];
 
 export interface CaseStudy {
@@ -345,27 +347,6 @@ export const caseStudies: CaseStudy[] = [
     ],
     services: ["Digital Transformation", "Web & Mobile Applications", "Enterprise Software"],
     year: "2024",
-  },
-];
-
-export interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-}
-
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "RoboAgentix delivered automation our auditors could actually sign off on. The work that took our teams weeks now clears in hours — and every decision is explainable.",
-    name: "Programme Director",
-    role: "National Health System",
-  },
-  {
-    quote:
-      "They engineer like a product company and operate like a bank. That combination is rare, and it is exactly what mission-critical work demands.",
-    name: "Chief Technology Officer",
-    role: "Tier-1 Financial Institution",
   },
 ];
 

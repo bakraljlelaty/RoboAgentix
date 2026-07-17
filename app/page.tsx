@@ -4,19 +4,15 @@ import { Container, Eyebrow, Section, SectionHeading } from "@/components/primit
 import { Button } from "@/components/button";
 import { AgentCore } from "@/components/agent-core";
 import { Reveal } from "@/components/reveal";
-import { Counter } from "@/components/counter";
-import { Marquee } from "@/components/marquee";
 import { Pipeline } from "@/components/pipeline";
 import { CTA } from "@/components/cta";
 import { ArrowRight, ServiceIcon } from "@/components/icons";
 import {
   agentCoreCapabilities,
-  certifications,
   industries,
-  metrics,
   process,
   services,
-  testimonials,
+  valueProps,
 } from "@/lib/content";
 
 export default function HomePage() {
@@ -74,10 +70,10 @@ export default function HomePage() {
                 style={{ "--d": "0.24s" } as CSSProperties}
               >
                 <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
-                  Trusted in regulated environments
+                  Built for regulated environments
                 </span>
                 <span aria-hidden>·</span>
-                <span>ISO 27001 · SOC 2 Type II · Sovereign-ready</span>
+                <span>Security, scale &amp; accountability by design</span>
               </div>
             </div>
 
@@ -90,13 +86,6 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
-      {/* ------------------------- Credentials -------------------------- */}
-      <div className="border-y border-white/8 py-5">
-        <Container>
-          <Marquee items={certifications} />
-        </Container>
-      </div>
 
       {/* --------------------------- Services --------------------------- */}
       <Section id="services">
@@ -176,20 +165,16 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* --------------------------- Metrics ---------------------------- */}
+      {/* ------------------------- Value props -------------------------- */}
       <Section className="border-y border-white/8 bg-bg-2/40">
         <Container>
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {metrics.map((m, i) => (
-              <Reveal key={m.label} delay={i * 70}>
-                <div className="font-mono text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-                  <Counter
-                    value={m.value}
-                    prefix={m.prefix}
-                    suffix={m.suffix}
-                  />
+            {valueProps.map((v, i) => (
+              <Reveal key={v.title} delay={i * 70}>
+                <div className="text-lg font-semibold text-ink">{v.title}</div>
+                <div className="mt-3 text-sm leading-relaxed text-muted">
+                  {v.desc}
                 </div>
-                <div className="mt-3 text-sm text-muted">{m.label}</div>
               </Reveal>
             ))}
           </div>
@@ -243,31 +228,6 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-        </Container>
-      </Section>
-
-      {/* ------------------------- Testimonial -------------------------- */}
-      <Section className="border-t border-white/8">
-        <Container>
-          <Reveal className="card relative overflow-hidden p-8 sm:p-12">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(58,142,118,0.16), transparent 70%)",
-              }}
-            />
-            <blockquote className="relative max-w-3xl text-xl font-medium leading-relaxed sm:text-2xl">
-              &ldquo;{testimonials[0].quote}&rdquo;
-            </blockquote>
-            <figcaption className="relative mt-6 text-sm text-muted">
-              <span className="font-medium text-ink">
-                {testimonials[0].name}
-              </span>{" "}
-              — {testimonials[0].role}
-            </figcaption>
-          </Reveal>
         </Container>
       </Section>
 

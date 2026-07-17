@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./logo";
 import { services, site } from "@/lib/content";
-import { Github, Linkedin, Mail, MapPin, XSocial } from "./icons";
+import { Mail, MapPin } from "./icons";
 
 const company = [
   { label: "Services", href: "/services" },
@@ -48,29 +48,13 @@ export function Footer() {
             <Mail className="size-4 text-brand" />
             {site.email}
           </a>
-          <div className="mt-3 flex items-center gap-2">
-            {[
-              { Icon: Linkedin, label: "LinkedIn" },
-              { Icon: XSocial, label: "X" },
-              { Icon: Github, label: "GitHub" },
-            ].map(({ Icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={label}
-                className="grid size-9 place-items-center rounded-lg border border-white/10 text-muted transition-colors hover:border-brand/50 hover:text-ink"
-              >
-                <Icon className="size-4" />
-              </a>
-            ))}
-          </div>
         </FooterCol>
       </div>
 
       <div className="border-t border-white/8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-6 text-sm text-faint sm:flex-row sm:px-8">
           <p>
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/" className="transition-colors hover:text-muted">
